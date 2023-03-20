@@ -4,15 +4,17 @@ import net.javaguides.springboot.repository.TaskRepository;
 import net.javaguides.springboot.dto.TaskDTO;
 import net.javaguides.springboot.model.Task;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.stream.Collectors;
-
+@Service
 public class TaskService {
 
     @Autowired
     private TaskRepository taskRepository;
 
-    public List<TaskDTO> getAllId(){
+    public List<TaskDTO> getAllTasks(){
         return taskRepository.findAll()
                 .stream()
                 .map(this::convertEntityToDto)
