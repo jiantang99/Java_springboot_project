@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.modelmapper.ModelMapper;
+
 
 @SpringBootApplication
 public class SpringbootDtoApplication implements CommandLineRunner {
@@ -20,10 +22,14 @@ public class SpringbootDtoApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		Task task = new Task();
-		task.setId(123456789);
+		task.setId(1);
 		task.setTitle("Test");
 		task.setDescription("Test1");
 		task.setCompleted(true);
 		taskRepository.save(task);
+	}
+
+	public ModelMapper modelMapper(){
+		return new ModelMapper();
 	}
 }
