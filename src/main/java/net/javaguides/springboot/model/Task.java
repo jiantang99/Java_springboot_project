@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "tasks")
 public class Task {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
     @Column(name="title")
     private String title;
